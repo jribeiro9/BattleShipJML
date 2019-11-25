@@ -1,31 +1,31 @@
 package battleship;
 
-public class Destroyer implements Navio{
-		
+public class Fragata implements Navio{
+	
 	private /*@ spec_public @*/ int qtdDeNavios;
 	private /*@ spec_public @*/ int tamanhoNavio;
 	private /*@ spec_public @*/ String nomeNavio;
 	//@ public invariant 0 <= qtdDeNavios && 0 <= tamanhoNavio;
 	
 	/*@
-	@	requires q == 1; 
-	@ 	requires t == 5;
+	@	requires q == 3; 
+	@ 	requires t == 3;
 	@ 	ensures qtdDeNavios == q;
 	@ 	ensures tamanhoNavio == t;
-	@	ensures nomeNavio == "Destroyer"; 
+	@	ensures nomeNavio == "Fragata"; 
 	@*/
-	public Destroyer(int q, int t){
+	public Fragata(int q, int t){
 		this.qtdDeNavios = q;
 		this.tamanhoNavio = t;
-		this.nomeNavio = "Destroyer";
-	}	
-	@Override
-	public int getQtdDeNavios() {
-		return qtdDeNavios;
+		this.nomeNavio = "Fragata";
 	}
 	@Override
 	public int getTamanhoNavio() {
 		return tamanhoNavio;
+	}
+	@Override
+	public int getQtdDeNavios() {
+		return qtdDeNavios;
 	}
 	@Override
 	public String getNomeNavio(){
