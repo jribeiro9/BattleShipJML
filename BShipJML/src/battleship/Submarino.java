@@ -20,15 +20,15 @@ public class Submarino implements Navio{
 		this.nomeNavio = "Submarino";
 	}
 	@Override
-	public int getQtdDeNavios() {
+	public /*@ pure @*/ int getQtdDeNavios() {
 		return qtdDeNavios;
 	}
 	@Override
-	public int getTamanhoNavio() {
+	public /*@ pure @*/ int getTamanhoNavio() {
 		return tamanhoNavio;
 	}
 	@Override
-	public String getNomeNavio(){
+	public /*@ pure @*/ String getNomeNavio(){
 		return nomeNavio;
 	}
 }

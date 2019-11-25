@@ -20,15 +20,15 @@ public class Fragata implements Navio{
 		this.nomeNavio = "Fragata";
 	}
 	@Override
-	public int getTamanhoNavio() {
+	public /*@ pure @*/ int getTamanhoNavio() {
 		return tamanhoNavio;
 	}
 	@Override
-	public int getQtdDeNavios() {
+	public /*@ pure @*/ int getQtdDeNavios() {
 		return qtdDeNavios;
 	}
 	@Override
-	public String getNomeNavio(){
+	public /*@ pure @*/ String getNomeNavio(){
 		return nomeNavio;
 	}
 }
