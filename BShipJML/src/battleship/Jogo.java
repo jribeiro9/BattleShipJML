@@ -67,6 +67,12 @@ public class Jogo {
 		}
 	}
 
+	/*@ requires linha >=0; 
+	@	requires coluna >=0; 
+	@	requires orientacao >=0;
+	@	requires tamanho >=0;
+	@	requires vetor.length >0;
+	@*/
 	public boolean cabeNavio(int linha, int coluna, int orientacao, int tamanho, int vetor[][]){
 		// Se a orienta��o for Vertical, trava a coluna e incrementa a linha
 		if (orientacao == 0){

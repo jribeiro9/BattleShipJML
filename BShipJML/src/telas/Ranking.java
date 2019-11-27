@@ -10,6 +10,7 @@ import battleship.Pontuacao;
 import java.awt.Font;
 import java.awt.TextArea;
 
+
 public class Ranking extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
@@ -26,6 +27,7 @@ public class Ranking extends JFrame implements ActionListener {
 	/**
 	 * Construtor da classe Ranking que cria os elementos grficos da janela.
 	 */
+
 	public Ranking() {
 		
 		// Configura o nome da Janela

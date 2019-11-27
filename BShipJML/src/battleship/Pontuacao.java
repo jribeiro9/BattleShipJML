@@ -9,19 +9,19 @@ import java.util.ArrayList;
 public class Pontuacao {
 	
 	private static Pontuacao instancia;	
-	private ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
-	
-
+	private /*@ spec_public @*/ ArrayList<Jogador>  jogadores = new ArrayList<Jogador>();
+	//@ public initially jogadores.length() == 0;
 	public Pontuacao(){
 	}
 	
+	//@ ensures \result != null;
 	public static synchronized Pontuacao getInstance(){
 		if (instancia == null) {
 			instancia = new Pontuacao();
 		}
 		return instancia;
 	}	
-	
+	//@ requires jogador != null;
 	public void adicionaJogador(Jogador jogador){
 		jogadores.add(jogador);
 	}
@@ -58,6 +58,13 @@ public class Pontuacao {
 		}
 	}
 
+	/*@ public normal_behavior	
+	@ 	ensures \result != null;
+	@ also
+	@ 	public exceptional_behavior
+	@ 	signals_only Exception;
+	@ 	signals (Exception e);
+	@*/
 	@SuppressWarnings("unchecked")
 	public ArrayList<Jogador> getJogadores(){
 		ArrayList<Jogador> jog = null;
