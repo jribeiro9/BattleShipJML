@@ -18,15 +18,24 @@ public class Destroyer implements Navio{
 		this.qtdDeNavios = q;
 		this.tamanhoNavio = t;
 		this.nomeNavio = "Destroyer";
-	}	
+	}
+	/*@ also
+	@ensures \result == 1;
+	@*/
 	@Override
 	public /*@ pure @*/ int getQtdDeNavios() {
 		return qtdDeNavios;
 	}
+	/*@ also
+	@ensures \result == 5;
+	@*/
 	@Override
 	public /*@ pure @*/ int getTamanhoNavio() {
 		return tamanhoNavio;
 	}
+	/*@ also
+	@ensures \result == "Destroyer";
+	@*/
 	@Override
 	public /*@ pure @*/ String getNomeNavio(){
 		return nomeNavio;

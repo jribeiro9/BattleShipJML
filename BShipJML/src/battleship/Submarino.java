@@ -19,14 +19,23 @@ public class Submarino implements Navio{
 		this.tamanhoNavio = t;
 		this.nomeNavio = "Submarino";
 	}
+	/*@ also
+	@ensures \result == 5;
+	@*/
 	@Override
 	public /*@ pure @*/ int getQtdDeNavios() {
 		return qtdDeNavios;
 	}
+	/*@ also
+	@ensures \result == 1;
+	@*/
 	@Override
 	public /*@ pure @*/ int getTamanhoNavio() {
 		return tamanhoNavio;
 	}
+	/*@ also
+	@ensures \result == "Submarino";
+	@*/
 	@Override
 	public /*@ pure @*/ String getNomeNavio(){
 		return nomeNavio;

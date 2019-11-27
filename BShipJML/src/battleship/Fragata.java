@@ -19,14 +19,23 @@ public class Fragata implements Navio{
 		this.tamanhoNavio = t;
 		this.nomeNavio = "Fragata";
 	}
+	/*@ also
+	@ensures \result == 3;
+	@*/
 	@Override
 	public /*@ pure @*/ int getTamanhoNavio() {
 		return tamanhoNavio;
 	}
+	/*@ also
+	@ensures \result == 3;
+	@*/
 	@Override
 	public /*@ pure @*/ int getQtdDeNavios() {
 		return qtdDeNavios;
 	}
+	/*@ also
+	@ensures \result == "Fragata";
+	@*/
 	@Override
 	public /*@ pure @*/ String getNomeNavio(){
 		return nomeNavio;
