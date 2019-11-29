@@ -19,7 +19,7 @@ public privileged aspect AspectJMLRac$JMLRacPost4Project {
     JMLChecker.rethrowJMLAssertionError(rac$e);
   }
 
-public static aspect UtilPreconditionChecking_Destroyer$e1d66d95_4545_492c_929e_a0c3c6c4c46b{
+public static aspect UtilPreconditionChecking_Destroyer$33b21a15_6fe6_4922_87bc_50ffdf12553c{
   before(): (execution( * battleship.Destroyer..*+.*(..))
           || execution(battleship.Destroyer..*+.new(..))
           || execution( * battleship.Destroyer+.*(..))
@@ -46,7 +46,7 @@ public static aspect UtilPreconditionChecking_Destroyer$e1d66d95_4545_492c_929e_
     JMLChecker.rethrowJMLAssertionError(rac$e);
   }
 
-public static aspect UtilPreconditionChecking_Fragata$c1ee050c_08d7_4ed4_9d56_cea50c25ef37{
+public static aspect UtilPreconditionChecking_Fragata$08751aa5_eaae_4989_b16e_13a902a097a4{
   before(): (execution( * battleship.Fragata..*+.*(..))
           || execution(battleship.Fragata..*+.new(..))
           || execution( * battleship.Fragata+.*(..))
@@ -73,7 +73,7 @@ public static aspect UtilPreconditionChecking_Fragata$c1ee050c_08d7_4ed4_9d56_ce
     JMLChecker.rethrowJMLAssertionError(rac$e);
   }
 
-public static aspect UtilPreconditionChecking_Jogador$98adae18_b408_4a9b_bdd7_4f89b753c557{
+public static aspect UtilPreconditionChecking_Jogador$7fed2b6e_da85_4011_9a62_fa8c762dc724{
   before(): (execution( * battleship.Jogador..*+.*(..))
           || execution(battleship.Jogador..*+.new(..))
           || execution( * battleship.Jogador+.*(..))
@@ -100,7 +100,7 @@ public static aspect UtilPreconditionChecking_Jogador$98adae18_b408_4a9b_bdd7_4f
     JMLChecker.rethrowJMLAssertionError(rac$e);
   }
 
-public static aspect UtilPreconditionChecking_Jogo$04407fcc_9bff_4a50_a7cb_85ad874eabec{
+public static aspect UtilPreconditionChecking_Jogo$2598c0bb_3374_42c7_a67e_126734a4db54{
   before(): (execution( * battleship.Jogo..*+.*(..))
           || execution(battleship.Jogo..*+.new(..))
           || execution( * battleship.Jogo+.*(..))
@@ -145,7 +145,7 @@ public static aspect UtilPreconditionChecking_Jogo$04407fcc_9bff_4a50_a7cb_85ad8
     JMLChecker.rethrowJMLAssertionError(rac$e);
   }
 
-public static aspect UtilPreconditionChecking_Navio$b11aaaf6_f751_4655_887d_8a959576eb1c{
+public static aspect UtilPreconditionChecking_Navio$3f26ef62_67bc_4538_af90_3ebc09937b21{
   before(): (execution( * battleship.Navio..*+.*(..))
           || execution(battleship.Navio..*+.new(..))
           || execution( * battleship.Navio+.*(..))
@@ -187,7 +187,7 @@ execution(* battleship.Pontuacao+.*(..) throws Exception) ||
     JMLChecker.rethrowJMLAssertionError(rac$e);
   }
 
-public static aspect UtilPreconditionChecking_Pontuacao$208dfcb5_ec89_4451_ad65_c320b4a018d5{
+public static aspect UtilPreconditionChecking_Pontuacao$e34e4648_39cf_45ed_867c_14205173e9d3{
   before(): (execution( * battleship.Pontuacao..*+.*(..))
           || execution(battleship.Pontuacao..*+.new(..))
           || execution( * battleship.Pontuacao+.*(..))
@@ -232,7 +232,7 @@ public static aspect UtilPreconditionChecking_Pontuacao$208dfcb5_ec89_4451_ad65_
     JMLChecker.rethrowJMLAssertionError(rac$e);
   }
 
-public static aspect UtilPreconditionChecking_Submarino$4cb4ab65_e299_4ac3_8ae9_1856e9dbcbec{
+public static aspect UtilPreconditionChecking_Submarino$bd2a3c29_78b3_4a90_9546_44bca0c3067e{
   before(): (execution( * battleship.Submarino..*+.*(..))
           || execution(battleship.Submarino..*+.new(..))
           || execution( * battleship.Submarino+.*(..))

@@ -5,13 +5,29 @@ import java.util.Random;
 
 public class Jogo {
 	
-	private Random generate = new Random();
+
+	private /*@ spec_public @*/ Random generate = new Random();
+	private /*@ spec_public @*/ int linha = 0;
+	private /*@ spec_public @*/ int coluna = 0;
 	
+	//@ public invariant linha >= 0;
+	//@ public invariant coluna >= 0;
+	
+	//@ initially linha == 0;
+	//@ initially coluna == 0;
+	
+	/*@ requires vetor.length > 0;
+	 @ assignable linha, coluna, vetor;
+	 @ ensures \old(vetor.length) <= vetor.length;
+	 @ ensures (\forall int i; i>=0 && i < vetor.length; 
+	 @			(\forall int j; j>=0 && j < vetor[i].length; 
+	 @ 			vetor[i][j] == 0 || vetor[i][j] == 1));
+	 @*/
 	public void iniciaJogo(int[][] vetor){		
 		
 		// Cria a posi��o do navio no tabuleiro
-		int linha = generate.nextInt(10); // Linha
-		int coluna = generate.nextInt(10); // Coluna
+		this.linha = generate.nextInt(10); // Linha
+		this.coluna = generate.nextInt(10); // Coluna
 		boolean cabe = false;
 		
 		// Criando ArrayList com navios
@@ -72,6 +88,7 @@ public class Jogo {
 	@	requires orientacao >=0;
 	@	requires tamanho >=0;
 	@	requires vetor.length >0;
+	@ 	ensures \result == true || \result == false;
 	@*/
 	public boolean cabeNavio(int linha, int coluna, int orientacao, int tamanho, int vetor[][]){
 		// Se a orienta��o for Vertical, trava a coluna e incrementa a linha

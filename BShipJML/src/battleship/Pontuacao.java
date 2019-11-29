@@ -26,6 +26,10 @@ public class Pontuacao {
 		jogadores.add(jogador);
 	}
 	
+	/*@ 
+	@	public constraint (\forall int i; i>=0 && i < jogadores.size();
+	@						jogadores.get(i) instanceof Jogador);
+	@*/
 	public void salvaLista(){
 		
 		// Cria Array tempor�rio para guardar jogadores j� salvos
