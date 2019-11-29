@@ -29,7 +29,8 @@ public class Jogador implements Serializable, Comparable<Jogador> {
 	public void setPontuacao(int pontuacao) {
 		this.pontuacao = pontuacao;
 	}
-
+	//@ also
+	//@ ensures \result != null;
 	@Override
 	public String toString(){
 		StringBuilder str = new StringBuilder();
@@ -37,6 +38,8 @@ public class Jogador implements Serializable, Comparable<Jogador> {
 		return str.toString();
 	}
 
+	//@ requires jog != null;
+	//@ ensures \result >= 0;
 	@Override
 	public int compareTo(Jogador jog) {
 		int compararPontos = ((Jogador) jog).getPontuacao();		
