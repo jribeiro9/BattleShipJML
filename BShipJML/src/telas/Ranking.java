@@ -16,11 +16,11 @@ public class Ranking extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	
 	// Criando painel para receber elementos
-	private JPanel contentPane = new JPanel();
+	private /*@ spec_public @*/ JPanel contentPane = new JPanel();
 	// Criao do boto voltar
-	private JButton voltar = new JButton("Voltar");
+	private /*@ spec_public @*/ JButton voltar = new JButton("Voltar");
 	// Criao da label Ttulo
-	private JLabel labelTitulo = new JLabel("Ranking Pontua\u00E7\u00E3o");
+	private /*@ spec_public @*/ JLabel labelTitulo = new JLabel("Ranking Pontua\u00E7\u00E3o");
 	// JScrollPane texto = new JScrollPane(caixaDeTexto);
 	TextArea textArea = new TextArea();
 	
@@ -89,7 +89,14 @@ public class Ranking extends JFrame implements ActionListener {
 	 * Mtodo que verifica se a lista est vazia ou nula e lana exceo personalizada.
 	 * 
 	 */
-	public void verificaLista(ArrayList<Jogador> jogadores) throws ListaInvalidaException{
+	/*@ public normal_behavior
+	@	requires jogadores != null;
+	@ also
+	@	public exceptional_behavior
+	@	requires jogadores == null;
+	@	signals_only ListaInvalidaException;
+	@*/
+	public /*@ pure @*/ void verificaLista(ArrayList<Jogador> jogadores) throws ListaInvalidaException{
 		if (jogadores == null || jogadores.isEmpty()){
 			throw new ListaInvalidaException("O arquivo est vazio!");
 		}

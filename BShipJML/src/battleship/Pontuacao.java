@@ -30,7 +30,7 @@ public class Pontuacao {
 	@	public constraint (\forall int i; i>=0 && i < jogadores.size();
 	@						jogadores.get(i) instanceof Jogador);
 	@*/
-	public void salvaLista(){
+	public /*@ pure @*/ void salvaLista(){
 		
 		// Cria Array tempor�rio para guardar jogadores j� salvos
 		ArrayList<Jogador> arquivo = getJogadores();

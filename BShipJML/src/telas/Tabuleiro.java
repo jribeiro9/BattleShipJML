@@ -12,26 +12,26 @@ public class Tabuleiro extends JFrame implements ActionListener{
 	private static final long serialVersionUID = 1L;
 	
 	// Adicionando os Painis
-	JPanel grid = new JPanel();
-	JPanel jContentPane = new JPanel();
-	Container cp;
+	/*@ spec_public @*/ JPanel grid = new JPanel();
+	/*@ spec_public @*/ JPanel jContentPane = new JPanel();
+	/*@ spec_public @*/ Container cp;
 
 	// Adicionando os Botes
-	JButton[][] Botoes = new JButton[10][10];
-	JButton novo = new JButton("Novo Jogo");
-	JButton voltar = new JButton("Voltar");
+	/*@ spec_public @*/ JButton[][] Botoes = new JButton[10][10];
+	/*@ spec_public @*/ JButton novo = new JButton("Novo Jogo");
+	/*@ spec_public @*/ JButton voltar = new JButton("Voltar");
 
 	// Adicionando as Labels
-	JLabel naviosRestantes = new JLabel("Navios Restantes");
-	JLabel tirosRestantes = new JLabel("Tiros Restantes");
-	JLabel contNavios = new JLabel("");
-	JLabel contTiros = new JLabel("");
-	int contadorNavio = 19;
-	int contadorTiro = 30;
+	/*@ spec_public @*/ JLabel naviosRestantes = new JLabel("Navios Restantes");
+	/*@ spec_public @*/ JLabel tirosRestantes = new JLabel("Tiros Restantes");
+	/*@ spec_public @*/ JLabel contNavios = new JLabel("");
+	/*@ spec_public @*/ JLabel contTiros = new JLabel("");
+	/*@ spec_public @*/ int contadorNavio = 19;
+	/*@ spec_public @*/ int contadorTiro = 30;
 
 	// Vetor que fica por trs dos Botes e guarda gua ou navios
-	int vetor[][] = new int[10][10];
-	int pontuacao = 0;
+	/*@ spec_public @*/ int vetor[][] = new int[10][10];
+	/*@ spec_public @*/ int pontuacao = 0;
 	String nomeJogador;
 
 	// Instanciando classe jogo que preenche o vetor e distribui os navios
@@ -43,6 +43,24 @@ public class Tabuleiro extends JFrame implements ActionListener{
 	 * Construtor da classe Tabuleiro que cria os elementos grficos da janela.
 	 * @param nomeJogador Recebe o nome do jogador como parmetro e seta no objeto Jogador.
 	 */
+	/*@ 
+	@ requires nomeJogador instanceof String;
+	@ requires grid instanceof JPanel;
+	@ requires jContentPane instanceof JPanel;
+	@ requires novo instanceof JButton;
+	@ requires voltar instanceof JButton;
+	@ requires naviosRestantes instanceof JLabel;
+	@ requires tirosRestantes instanceof JLabel;
+	@ requires contNavios instanceof JLabel;
+	@ requires contTiros instanceof JLabel;
+	@ requires contadorNavio == 19;
+	@ requires contadorTiro == 30;
+	@ requires pontuacao == 0;
+	@ requires (\forall int i; i>=0 && i < 10; 
+	@			(\forall int j; j>=0 && j < 10; 
+	@ 			Botoes[i][j] instanceof JButton));
+	@ ensures cp != null;
+	@*/
 	public Tabuleiro(String nomeJogador){
 
 		// Titulo da janela
@@ -131,6 +149,11 @@ public class Tabuleiro extends JFrame implements ActionListener{
 	 * <p> O boto Novo Jogo cria um novo tabuleiro ignorando o jogador e a pontuao anterior e informa
 	 * ao usurio que um novo jogo foi iniciado com uma mensagem na tela.
 	 */
+	/*@
+	@ ensures (\forall int i; i>=0 && i < vetor.length; 
+	@			(\forall int j; j>=0 && j < vetor[i].length; 
+	@ 			\old(vetor)[i][j] == vetor[i][j]));
+	@*/
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
